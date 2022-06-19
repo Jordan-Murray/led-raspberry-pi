@@ -17,11 +17,7 @@ class RunText(SampleBase):
         font.LoadFont("../../fonts/7x13.bdf")
         textColor = graphics.Color(255, 255, 0)
         pos = offscreen_canvas.width
-        while True:
-            my_text = "Today's BTC Price: $" + str(getprice('bitcoin','usd'))
-        # my_text = self.args.text + str(btcprice)
-        # _candle = candle.Candle(15)
-        # _candle.run()
+        my_text = "hellow"
         while True:
             offscreen_canvas.Clear()
             len = graphics.DrawText(offscreen_canvas, font, pos, 10, textColor, my_text)
