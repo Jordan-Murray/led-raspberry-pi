@@ -1,0 +1,18 @@
+Login-
+ssh pi@192.168.0.14
+password: raspberry
+
+Display Image:
+
+cd utils
+sudo ./led-image-viewer mc-block.png --led-gpio-mapping=adafruit-hat --led-cols=64 --led-rows=32 --led-brightness=60
+
+Display Scrolling Text:
+
+cd bindings/python/samples
+sudo python3 runtext.py --led-cols=64 --led-rows=32 --led-gpio-mapping=adafruit-hat --led-brightness=60
+
+
+STOCK TICKER MAIN
+
+cd stock-ticker-pi/src/stock-ticker-main

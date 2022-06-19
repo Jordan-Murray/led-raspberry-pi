@@ -6,7 +6,7 @@ RGB_LIBRARY_NAME=rgbmatrix
 RGB_LIBRARY=$(RGB_LIBDIR)/lib$(RGB_LIBRARY_NAME).a
 
 # Some language bindings.
-PYTHON_LIB_DIR=bindings/python
+PYTHON_LIB_DIR=src/stock-ticker
 CSHARP_LIB_DIR=bindings/c\#
 
 all : $(RGB_LIBRARY)
