@@ -3,7 +3,7 @@ from rgbmatrix import graphics
 import math
 from utils import round_normal
 import sys
-import numpy as np
+# import numpy as np
 
 DEBUG = False
 
@@ -319,27 +319,27 @@ def get_color(r, g, b):
     return "\x1b[48;5;{}m \x1b[0m".format(int(get_ansi_color_code(r,g,b)))
 
 
-def show_image(img):
-    h = img.height
-    w = img.width
+# def show_image(img):
+#     h = img.height
+#     w = img.width
 
-    # Get image
-    img = img.resize((w,h), Image.ANTIALIAS)
-    # Set to array
-    img_arr = np.asarray(img)
-    # Get the shape so we know x,y coords
-    h,w,c = img_arr.shape
+#     # Get image
+#     img = img.resize((w,h), Image.ANTIALIAS)
+#     # Set to array
+#     img_arr = np.asarray(img)
+#     # Get the shape so we know x,y coords
+#     h,w,c = img_arr.shape
 
-    # Then draw our mona lisa
-    mona_lisa = ''
-    for x in range(h):
-        for y in range(w):
-            pix = img_arr[x][y]
-            color = ' '
-            # 90% of our image is black, and the pi sometimes has trouble writing to the terminal
-            # quickly. So default the color to blank, and only fill in the color if it's not black
-            if sum(pix) > 0:
-                color = get_color(pix[0], pix[1], pix[2])
-            mona_lisa += color
-    sys.stdout.write(mona_lisa)
-    sys.stdout.flush()
+#     # Then draw our mona lisa
+#     mona_lisa = ''
+#     for x in range(h):
+#         for y in range(w):
+#             pix = img_arr[x][y]
+#             color = ' '
+#             # 90% of our image is black, and the pi sometimes has trouble writing to the terminal
+#             # quickly. So default the color to blank, and only fill in the color if it's not black
+#             if sum(pix) > 0:
+#                 color = get_color(pix[0], pix[1], pix[2])
+#             mona_lisa += color
+#     sys.stdout.write(mona_lisa)
+#     sys.stdout.flush()
