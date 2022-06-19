@@ -4,7 +4,7 @@ import argparse
 import os
 # import debug
 from datetime import datetime, timezone, time
-import regex
+# import regex
 import math
 import dbus
 import json
@@ -22,18 +22,18 @@ def stop_splash_service():
         nosvc = ex
 
 # validate if a string is in 12h format or 24h format
-def timeValidator(timestr):
-    #Check 24hr HH:MM
-    ok24hr = regex.match('^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$', timestr)
-    #Check 12h 5:30 PM or 5:30 pm 
-    ok12hr = regex.match('^(1[0-2]|0?[1-9]):([0-5][0-9]) ([AaPp][Mm])$',timestr)
+# def timeValidator(timestr):
+#     #Check 24hr HH:MM
+#     ok24hr = regex.match('^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$', timestr)
+#     #Check 12h 5:30 PM or 5:30 pm 
+#     ok12hr = regex.match('^(1[0-2]|0?[1-9]):([0-5][0-9]) ([AaPp][Mm])$',timestr)
 
-    if ok24hr:
-        return "24h"
-    elif ok12hr:
-        return "12h"
-    else:
-        return "invalid"
+#     if ok24hr:
+#         return "24h"
+#     elif ok12hr:
+#         return "12h"
+#     else:
+#         return "invalid"
 
     
 
