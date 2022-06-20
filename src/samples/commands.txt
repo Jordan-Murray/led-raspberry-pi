@@ -1,4 +1,0 @@
-make -C examples-api-use
-sudo examples-api-use/demo -D0 
-args // --led-cols=64 --led-rows=32 --led-gpio-mapping=adafruit-hat --led-brightness=60
-
