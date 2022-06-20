@@ -2,6 +2,7 @@ from LayoutRenderer import LayoutRenderer
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 from matrix import Matrix
 from utils import args, led_matrix_options
+from time import strftime
 
 def run():
     # Get supplied command line arguments
@@ -15,8 +16,11 @@ def run():
 
     renderer = LayoutRenderer(matrix)
     while True:
-        # renderer.renderBTCPrice()
-        renderer.renderClock()
+        minuite = strftime("%M")
+        if(int(minuite) % 5 == 0):
+            renderer.renderBTCPrice()
+        else:
+            renderer.renderClock()
 
 if __name__ == "__main__":
     run()
