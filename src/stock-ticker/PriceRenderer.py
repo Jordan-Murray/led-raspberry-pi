@@ -2,6 +2,7 @@ from getPrice import getprice
 from rgbmatrix import graphics
 from PIL import ImageFont
 from utils import get_file
+from time import gmtime, strftime
 
 
 class PriceRenderer:
@@ -27,6 +28,15 @@ class PriceRenderer:
             self.font,
             fill = (225,225,225),
             backgroundColor = (0,0,0)
+        )
+
+        self.matrix.draw_text(
+            1,23,
+            strftime("%H:%M:%S", gmtime()),
+            self.font,
+            fill = (225,225,225),
+            backgroundColor = (0,0,0)
+
         )
         self.matrix.render()
 
