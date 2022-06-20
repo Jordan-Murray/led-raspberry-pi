@@ -5,8 +5,8 @@ from utils import get_file
 from time import gmtime, strftime
 
 
-class PriceRenderer:
-    def __init__(self,data,matrix):
+class LayoutRenderer:
+    def __init__(self,matrix):
         self.matrix = matrix
         self.font = ImageFont.truetype("DejaVuSansMono.ttf", 10)
         self.btcPrice = str(getprice('bitcoin','usd')) 

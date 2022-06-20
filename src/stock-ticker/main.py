@@ -1,4 +1,4 @@
-from PriceRenderer import PriceRenderer
+from LayoutRenderer import LayoutRenderer
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 from matrix import Matrix
 from data import Data
@@ -13,15 +13,10 @@ def run():
 
     # Initialize the matrix
     matrix = Matrix(RGBMatrix(options = matrixOptions))
-    # font = graphics.Font()
-    # font.LoadFont("../../fonts/7x13.bdf")
 
-    data = Data()
-    # data.font = font
-    # data.textColor = graphics.Color(255, 255, 255)
-    price = PriceRenderer(data,matrix)
+    renderer = LayoutRenderer(matrix)
     while True:
-        price.render()
+        renderer.render()
 
 if __name__ == "__main__":
     run()
