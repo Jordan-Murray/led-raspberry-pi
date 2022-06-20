@@ -12,10 +12,10 @@ class LayoutRenderer:
         #ImageFont.truetype("04b.ttf", 8)
 
     def renderBTCPrice(self):
-
+        self.matrix.clear()
         self.matrix.draw_text(
             (1,1),
-            "BTC Price:",
+            "BTC Price",
             self.font,
             fill = (225,225,225),
             backgroundColor = (0,0,0)
@@ -40,6 +40,7 @@ class LayoutRenderer:
         self.matrix.render()
 
     def renderClock(self):
+        self.matrix.clear()
         self.matrix.draw_text(
             (2,8),
             strftime("%I:%M:%S"),
