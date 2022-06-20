@@ -16,11 +16,12 @@ def run():
 
     renderer = LayoutRenderer(matrix)
     while True:
-        minuite = strftime("%M")
-        if(int(minuite) % 2 == 0):
-            renderer.renderBTCPrice()
-        else:
-            renderer.renderClock()
+        renderer.renderClock()
+        # minuite = strftime("%M")
+        # if(int(minuite) % 2 == 0):
+        #     renderer.renderBTCPrice()
+        # else:
+        #     renderer.renderClock()
 
 if __name__ == "__main__":
     run()
