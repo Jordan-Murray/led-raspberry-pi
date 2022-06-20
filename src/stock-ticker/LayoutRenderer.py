@@ -42,9 +42,9 @@ class LayoutRenderer:
 
     def renderClock(self):
         self.matrix.draw_text(
-            (1,1),
-            strftime("%H:%M:%S", gmtime()),
-            ImageFont.truetype("DejaVuSansMono.ttf", 15),
+            (10,16),
+            strftime("%I:%M:%S"),
+            ImageFont.truetype("DejaVuSansMono.ttf", 20),
             fill = (225,225,225),
             backgroundColor = (0,0,0)
         )
