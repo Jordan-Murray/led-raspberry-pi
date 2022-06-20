@@ -16,11 +16,14 @@ def run():
 
     renderer = LayoutRenderer(matrix)
     while True:
-        minuite = strftime("%M")
-        if(int(minuite) % 5 == 0):
-            renderer.renderBTCPrice()
-        else:
-            renderer.renderClock()
+        renderer.renderClock()
+        
+        #doesnt clear after swtiching, can use matrix.Clear() but will clear after every frame because inside true
+        # minuite = strftime("%M")
+        # if(int(minuite) % 5 == 0):
+        #     renderer.renderBTCPrice()
+        # else:
+        # renderer.renderClock()
 
 if __name__ == "__main__":
     run()
