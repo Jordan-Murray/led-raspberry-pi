@@ -7,6 +7,8 @@ sudo shutdown -h now
 
 #start screen
 sceen 
+#now run main.py
 ctrl a then d
+
 #open existing screen session
 screen -r
