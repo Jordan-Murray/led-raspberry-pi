@@ -16,7 +16,8 @@ def run():
 
     renderer = LayoutRenderer(matrix)
     while True:
-        renderer.render()
+        # renderer.renderBTCPrice()
+        renderer.renderClock()
 
 if __name__ == "__main__":
     run()

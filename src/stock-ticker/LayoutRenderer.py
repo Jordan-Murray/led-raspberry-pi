@@ -12,7 +12,7 @@ class LayoutRenderer:
         self.btcPrice = str(getprice('bitcoin','usd')) 
         #ImageFont.truetype("04b.ttf", 8)
 
-    def render(self):
+    def renderBTCPrice(self):
 
         self.matrix.draw_text(
             (1,1),
@@ -39,6 +39,15 @@ class LayoutRenderer:
         )
 
         self.matrix.render()
+
+    def renderClock(self):
+        self.matrix.draw_text(
+            (1,1),
+            strftime("%H:%M:%S", gmtime()),
+            ImageFont.truetype("DejaVuSansMono.ttf", 15),
+            fill = (225,225,225),
+            backgroundColor = (0,0,0)
+        )
 
     ##ToDo:
     ## Use DrawTextLayout and create layouts to draw multiple lines of text
