@@ -48,6 +48,7 @@ class LayoutRenderer:
             fill = (225,225,225),
             backgroundColor = (0,0,0)
         )
+        self.matrix.render()
 
     ##ToDo:
     ## Use DrawTextLayout and create layouts to draw multiple lines of text
