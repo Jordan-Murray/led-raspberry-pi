@@ -1,7 +1,6 @@
 from LayoutRenderer import LayoutRenderer
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 from matrix import Matrix
-from data import Data
 from utils import args, led_matrix_options
 
 def run():
