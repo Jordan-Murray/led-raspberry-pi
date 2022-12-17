@@ -4,6 +4,8 @@ from matrix import Matrix
 from utils import args, led_matrix_options
 from brightness_control import control_brightness
 from temp_display import display_temp
+from PIL import ImageFont
+
 
 def run():
     # Get supplied command line arguments
@@ -38,7 +40,7 @@ def run():
         matrix.clear()
 
         # Draw the time on the matrix
-        matrix.draw_text(current_time, x=0, y=0, font=matrix.Font6x10, color=(255,255,255))
+        matrix.draw_text((0,0), current_time, ImageFont.truetype("DejaVuSansMono.ttf", 10), color=(255,255,255))
 
         # Call the control_brightness function to adjust the brightness if necessary
         control_brightness(matrix)
