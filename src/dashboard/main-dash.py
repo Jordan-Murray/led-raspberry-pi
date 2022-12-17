@@ -35,10 +35,10 @@ def run():
         current_time = time.strftime("%I:%M %p")
 
         # Clear the matrix
-        matrix.Clear()
+        matrix.clear()
 
         # Draw the time on the matrix
-        matrix.DrawText(current_time, x=0, y=0, font=matrix.Font6x10, color=(255,255,255))
+        matrix.draw_text(current_time, x=0, y=0, font=matrix.Font6x10, color=(255,255,255))
 
         # Call the control_brightness function to adjust the brightness if necessary
         control_brightness(matrix)
