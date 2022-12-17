@@ -37,15 +37,15 @@ def run():
         matrix.clear()
 
         # Draw the time on the matrix
-        matrix.draw_text((0,0), time.strftime("%I:%M %p"), ImageFont.truetype("DejaVuSansMono.ttf", 20), fill=(255,255,255), backgroundColor = (0,0,0))
+        matrix.draw_text((0,0), time.strftime("%I:%M:%S"), ImageFont.truetype("DejaVuSansMono.ttf", 20), fill=(255,255,255), backgroundColor = (0,0,0))
 
-        # Call the control_brightness function to adjust the brightness if necessary
-        control_brightness(matrix)
+        # # Call the control_brightness function to adjust the brightness if necessary
+        # control_brightness(matrix)
 
         matrix.render()
         
-        # Call the display_temp function to display the current temperature on the matrix
-        display_temp(matrix, temp_update_interval)
+        # # Call the display_temp function to display the current temperature on the matrix
+        # display_temp(matrix, temp_update_interval)
 
             
 
