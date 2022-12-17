@@ -40,7 +40,7 @@ def run():
         matrix.draw_text((0,0), time.strftime("%I:%M:%S"), ImageFont.truetype("DejaVuSansMono.ttf", 20), fill=(255,255,255), backgroundColor = (0,0,0))
 
         # # Call the control_brightness function to adjust the brightness if necessary
-        control_brightness(matrix)
+        # control_brightness(matrix)
 
         matrix.render()
         
