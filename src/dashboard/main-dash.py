@@ -15,16 +15,16 @@ def run():
     matrixOptions.drop_privileges = False
 
     # # Set up the options for the matrix
-    # options = RGBMatrixOptions()
-    # options.rows = 32
-    # options.cols = 64
-    # options.chain_length = 1
-    # options.parallel = 1
-    # options.pwm_bits = 11
-    # options.brightness = 60
-    # options.pwm_lsb_nanoseconds = 130
-    # options.led_rgb_sequence = "RGB"
-    # options.led_gpio_mapping = "adafruit-hat"
+    options = RGBMatrixOptions()
+    options.rows = 32
+    options.cols = 64
+    options.chain_length = 1
+    options.parallel = 1
+    options.pwm_bits = 11
+    options.brightness = 60
+    options.pwm_lsb_nanoseconds = 130
+    options.led_rgb_sequence = "RGB"
+    options.led_gpio_mapping = "adafruit-hat"
 
     # Create the matrix object with the options
     matrix = Matrix(RGBMatrix(options = matrixOptions))
