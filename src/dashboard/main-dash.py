@@ -6,7 +6,6 @@ from brightness_control import control_brightness
 from temp_display import display_temp
 
 def run():
-
     # Get supplied command line arguments
     commandArgs = args()
     # Check for led configuration arguments
@@ -31,24 +30,22 @@ def run():
     # Set the temperature update interval to 5 minutes (in seconds)
     temp_update_interval = 5 * 60
 
-    try:
-        while True:
-            # Get the current time
-            current_time = time.strftime("%I:%M %p")
+    while True:
+        # Get the current time
+        current_time = time.strftime("%I:%M %p")
 
-            # Clear the matrix
-            matrix.Clear()
+        # Clear the matrix
+        matrix.Clear()
 
-            # Draw the time on the matrix
-            matrix.DrawText(current_time, x=0, y=0, font=matrix.Font6x10, color=(255,255,255))
+        # Draw the time on the matrix
+        matrix.DrawText(current_time, x=0, y=0, font=matrix.Font6x10, color=(255,255,255))
 
-            # Call the control_brightness function to adjust the brightness if necessary
-            control_brightness(matrix)
+        # Call the control_brightness function to adjust the brightness if necessary
+        control_brightness(matrix)
 
-            # Call the display_temp function to display the current temperature on the matrix
-            display_temp(matrix, temp_update_interval)
+        # Call the display_temp function to display the current temperature on the matrix
+        display_temp(matrix, temp_update_interval)
             
 
-    except KeyboardInterrupt:
-        matrix.Clear()
-        matrix.Terminate()
+if __name__ == "__main__":
+    run()
