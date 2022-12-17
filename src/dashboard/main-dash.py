@@ -40,7 +40,7 @@ def run():
         matrix.clear()
 
         # Draw the time on the matrix
-        matrix.draw_text((0,0), current_time, ImageFont.truetype("DejaVuSansMono.ttf", 10), color=(255,255,255))
+        matrix.draw_text((0,0), current_time, ImageFont.truetype("DejaVuSansMono.ttf", 10), fill=(255,255,255), backgroundColor = (0,0,0))
 
         # Call the control_brightness function to adjust the brightness if necessary
         control_brightness(matrix)
