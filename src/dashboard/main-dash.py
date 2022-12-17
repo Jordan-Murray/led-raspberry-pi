@@ -1,0 +1,44 @@
+import time
+from rgbmatrix import RGBMatrix, RGBMatrixOptions
+from brightness_control import control_brightness
+from temp_display import display_temp
+
+# Set up the options for the matrix
+options = RGBMatrixOptions()
+options.rows = 32
+options.cols = 64
+options.chain_length = 1
+options.parallel = 1
+options.pwm_bits = 11
+options.brightness = 60
+options.pwm_lsb_nanoseconds = 130
+options.led_rgb_sequence = "RGB"
+options.led_gpio_mapping = "adafruit-hat"
+
+# Create the matrix object with the options
+matrix = RGBMatrix(options = options)
+
+# Set the temperature update interval to 5 minutes (in seconds)
+temp_update_interval = 5 * 60
+
+try:
+    while True:
+        # Get the current time
+        current_time = time.strftime("%I:%M %p")
+
+        # Clear the matrix
+        matrix.Clear()
+
+        # Draw the time on the matrix
+        matrix.DrawText(current_time, x=0, y=0, font=matrix.Font6x10, color=(255,255,255))
+
+        # Call the control_brightness function to adjust the brightness if necessary
+        control_brightness(matrix)
+
+        # Call the display_temp function to display the current temperature on the matrix
+        display_temp(matrix, temp_update_interval)
+        
+
+except KeyboardInterrupt:
+    matrix.Clear()
+    matrix.Terminate()

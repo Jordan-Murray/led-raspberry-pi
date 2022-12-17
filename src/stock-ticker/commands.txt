@@ -12,7 +12,3 @@ ctrl a then d
 
 #open existing screen session
 screen -r
-
-ChatGPT
-----
-
