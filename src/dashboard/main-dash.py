@@ -13,20 +13,20 @@ def run():
     matrixOptions = led_matrix_options(commandArgs)
     matrixOptions.drop_privileges = False
 
-    # Set up the options for the matrix
-    options = RGBMatrixOptions()
-    options.rows = 32
-    options.cols = 64
-    options.chain_length = 1
-    options.parallel = 1
-    options.pwm_bits = 11
-    options.brightness = 60
-    options.pwm_lsb_nanoseconds = 130
-    options.led_rgb_sequence = "RGB"
-    options.led_gpio_mapping = "adafruit-hat"
+    # # Set up the options for the matrix
+    # options = RGBMatrixOptions()
+    # options.rows = 32
+    # options.cols = 64
+    # options.chain_length = 1
+    # options.parallel = 1
+    # options.pwm_bits = 11
+    # options.brightness = 60
+    # options.pwm_lsb_nanoseconds = 130
+    # options.led_rgb_sequence = "RGB"
+    # options.led_gpio_mapping = "adafruit-hat"
 
     # Create the matrix object with the options
-    matrix = RGBMatrix(options = options)
+    matrix = Matrix(RGBMatrix(options = matrixOptions))
 
     # Set the temperature update interval to 5 minutes (in seconds)
     temp_update_interval = 5 * 60
