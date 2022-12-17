@@ -24,7 +24,7 @@ def run():
     options.brightness = 60
     options.pwm_lsb_nanoseconds = 130
     options.led_rgb_sequence = "RGB"
-    options.hardware_mapping = "adafruit-hat"
+    # options.hardware_mapping = "adafruit-hat"
 
     # Create the matrix object with the options
     matrix = Matrix(RGBMatrix(options = matrixOptions))
