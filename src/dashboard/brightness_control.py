@@ -5,12 +5,12 @@ def control_brightness(matrix):
     current_time = time.strftime("%I:%M %p")
 
     # Check if it's 10pm or 7am
-    if current_time == "7:06 PM" or current_time == "07:00 AM":
+    if current_time == "7:07 PM" or current_time == "07:00 AM":
         # Get the current brightness
         current_brightness = matrix.brightness
 
         # Check if it's 10pm or 7am
-        if current_time == "07:06 PM":
+        if current_time == "07:07 PM":
             # Set the brightness to 0 at 10pm
             matrix.brightness = 0
         elif current_time == "07:00 AM":
