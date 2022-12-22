@@ -1,6 +1,7 @@
 from rgbmatrix import graphics
 from PIL import ImageFont
 from time import strftime
+from datetime import datetime, timedelta
 
 
 class layout_renderer:
@@ -38,8 +39,13 @@ class layout_renderer:
 
         self.matrix.render()
 
-    def render_clock(self):
-        while True:
+    def render_clock(self, inturpt):
+        time_str = strftime("%I:%M:%S")
+        time = datetime.strptime(time_str, "%I:%M:%S")
+        time += timedelta(seconds=inturpt)
+        new_time_str = time.strftime("%I:%M:%S")
+
+        while strftime("%I:%M:%S") != new_time_str:
             self.matrix.clear()
             self.matrix.draw_text(
                 (8,8),
