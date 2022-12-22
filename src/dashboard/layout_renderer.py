@@ -15,7 +15,7 @@ class layout_renderer:
         while strftime("%I:%M:%S") != stop_time:
             self.matrix.clear()
             self.matrix.draw_text(
-                (8,8),
+                (4,8),
                 strftime("%I:%M:%S"),
                 ImageFont.truetype("DejaVuSansMono.ttf", 12),
                 fill = (225,225,225),
@@ -29,7 +29,7 @@ class layout_renderer:
         while strftime("%I:%M:%S") != stop_time:
             self.matrix.clear()
             self.matrix.draw_text(
-                (10,8),
+                (12,8),
                 str(temp) + "°C",
                 ImageFont.truetype("DejaVuSansMono.ttf", 20),
                 fill = (225,225,225),
