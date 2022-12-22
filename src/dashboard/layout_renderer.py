@@ -11,7 +11,8 @@ class layout_renderer:
         self.font = ImageFont.truetype("DejaVuSansMono.ttf", 10)
 
     def render_clock(self, duration):
-        while strftime("%I:%M:%S") != self.stop_time(duration):
+        stop_time = self.stop_time(duration)
+        while strftime("%I:%M:%S") != stop_time:
             self.matrix.clear()
             self.matrix.draw_text(
                 (8,8),
@@ -24,7 +25,8 @@ class layout_renderer:
 
     def render_temp(self, duration):
         temp = get_current_temp_in_celsius()
-        while strftime("%I:%M:%S") != self.stop_time(duration):
+        stop_time = self.stop_time(duration)
+        while strftime("%I:%M:%S") != stop_time:
             self.matrix.clear()
             self.matrix.draw_text(
                 (8,8),
