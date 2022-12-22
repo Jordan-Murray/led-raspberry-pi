@@ -12,4 +12,4 @@ class RenderManager:
 
             # time.sleep(30)
 
-            self.renderer.render_temp()
+            self.renderer.render_temp(30)

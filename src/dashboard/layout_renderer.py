@@ -39,10 +39,10 @@ class layout_renderer:
 
         self.matrix.render()
 
-    def render_clock(self, interrupt):
+    def render_clock(self, duration):
         time_str = strftime("%I:%M:%S")
         time = datetime.strptime(time_str, "%I:%M:%S")
-        time += timedelta(seconds=interrupt)
+        time += timedelta(seconds=duration)
         new_time_str = time.strftime("%I:%M:%S")
 
         while strftime("%I:%M:%S") != new_time_str:
@@ -56,16 +56,22 @@ class layout_renderer:
             )
             self.matrix.render()
 
-    def render_temp(self):
-        self.matrix.clear()
-        self.matrix.draw_text(
-            (8,8),
-            "5 degrees",
-            ImageFont.truetype("DejaVuSansMono.ttf", 10),
-            fill = (225,225,225),
-            backgroundColor = (0,0,0)
-        )
-        self.matrix.render()
+    def render_temp(self, duration):
+        time_str = strftime("%I:%M:%S")
+        time = datetime.strptime(time_str, "%I:%M:%S")
+        time += timedelta(seconds=duration)
+        new_time_str = time.strftime("%I:%M:%S")
+
+        while strftime("%I:%M:%S") != new_time_str:
+            self.matrix.clear()
+            self.matrix.draw_text(
+                (8,8),
+                "5 degrees",
+                ImageFont.truetype("DejaVuSansMono.ttf", 10),
+                fill = (225,225,225),
+                backgroundColor = (0,0,0)
+            )
+            self.matrix.render()
 
 
     ##ToDo:
