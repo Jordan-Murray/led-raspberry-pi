@@ -1,26 +1,4 @@
-import time
 import requests
-
-def display_temp(matrix, temp_update_interval):
-    # Get the current time
-    start_time = time.time()
-
-    while True:
-        # Check if it's time to update the temperature
-        elapsed_time = time.time() - start_time
-        if elapsed_time % temp_update_interval == 0:
-            # Get the current temperature in Celsius
-            # You can use a library or API call to get the temperature here
-            current_temp = get_current_temp_in_celsius()
-
-            # Clear the matrix
-            matrix.Clear()
-
-            # Draw the temperature on the matrix
-            matrix.DrawText(str(current_temp) + "°C", x=0, y=0, font=matrix.Font6x10, color=(255,255,255))
-
-            # Sleep for 1 second
-            time.sleep(1)
 
 def get_current_temp_in_celsius():
     # Set the API endpoint URL and your API key
