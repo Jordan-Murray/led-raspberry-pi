@@ -25,7 +25,7 @@ def run():
 
     # Create the matrix object with the options
     matrix = Matrix(RGBMatrix(options = matrixOptions))
-    RenderManager().render()
+    RenderManager(matrix).render()
 
 if __name__ == "__main__":
     run()

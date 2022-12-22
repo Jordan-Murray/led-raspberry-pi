@@ -3,8 +3,8 @@ from layout_renderer import layout_renderer
 
 
 class RenderManager:
-    def __init__(self):
-        self.renderer = layout_renderer()
+    def __init__(self,matrix):
+        self.renderer = layout_renderer(matrix)
 
     def render(self):
         self.renderer.render_clock()
