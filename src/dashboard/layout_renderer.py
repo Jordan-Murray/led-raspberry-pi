@@ -1,4 +1,3 @@
-from getPrice import getprice
 from rgbmatrix import graphics
 from PIL import ImageFont
 from time import strftime

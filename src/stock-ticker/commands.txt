@@ -12,3 +12,8 @@ ctrl a then d
 
 #open existing screen session
 screen -r
+
+
+
+cd led-raspberry-pi/src/dashboard/
+sudo python3 main-dash.py --led-gpio-mapping=adafruit-hat
