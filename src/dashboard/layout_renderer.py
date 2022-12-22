@@ -39,10 +39,10 @@ class layout_renderer:
 
         self.matrix.render()
 
-    def render_clock(self, inturpt):
+    def render_clock(self, interrupt):
         time_str = strftime("%I:%M:%S")
         time = datetime.strptime(time_str, "%I:%M:%S")
-        time += timedelta(seconds=inturpt)
+        time += timedelta(seconds=interrupt)
         new_time_str = time.strftime("%I:%M:%S")
 
         while strftime("%I:%M:%S") != new_time_str:

@@ -8,8 +8,8 @@ class RenderManager:
 
     def render(self):
         while True:
-            self.renderer.render_clock()
+            self.renderer.render_clock(30)
 
-            time.sleep(30)
+            # time.sleep(30)
 
             self.renderer.render_temp()
