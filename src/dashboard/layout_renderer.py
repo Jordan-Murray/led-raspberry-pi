@@ -39,15 +39,16 @@ class layout_renderer:
         self.matrix.render()
 
     def render_clock(self):
-        self.matrix.clear()
-        self.matrix.draw_text(
-            (8,8),
-            strftime("%I:%M:%S"),
-            ImageFont.truetype("DejaVuSansMono.ttf", 10),
-            fill = (225,225,225),
-            backgroundColor = (0,0,0)
-        )
-        self.matrix.render()
+        while True:
+            self.matrix.clear()
+            self.matrix.draw_text(
+                (8,8),
+                strftime("%I:%M:%S"),
+                ImageFont.truetype("DejaVuSansMono.ttf", 10),
+                fill = (225,225,225),
+                backgroundColor = (0,0,0)
+            )
+            self.matrix.render()
 
     def render_temp(self):
         self.matrix.clear()

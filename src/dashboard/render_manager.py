@@ -7,8 +7,9 @@ class RenderManager:
         self.renderer = layout_renderer(matrix)
 
     def render(self):
-        self.renderer.render_clock()
+        while True:
+            self.renderer.render_clock()
 
-        time.sleep(30)
+            time.sleep(30)
 
-        self.renderer.render_temp()
+            self.renderer.render_temp()
