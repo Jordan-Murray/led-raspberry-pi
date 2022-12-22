@@ -7,8 +7,10 @@ from temp_display import display_temp
 from PIL import ImageFont
 from layout_renderer import layout_renderer
 
-
-def run():
+def __init__(self):
+        self.renderer = layout_renderer()
+        
+def run(self):
     # Get supplied command line arguments
     commandArgs = args()
     # Check for led configuration arguments
@@ -32,13 +34,13 @@ def run():
 
     # Set the temperature update interval to 5 minutes (in seconds)
     temp_update_interval = 5 * 60
-    renderer = layout_renderer(matrix)
+
     while True:
-        renderer.render_clock()
+        self.renderer.render_clock()
 
         time.sleep(30)
 
-        renderer.renderTemp()
+        self.renderer.render_temp()
         # # Clear the matrix
         # matrix.clear()
 
