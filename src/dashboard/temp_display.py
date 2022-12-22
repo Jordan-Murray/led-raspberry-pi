@@ -9,7 +9,8 @@ def get_current_temp_in_celsius():
     params = {
         "lat": "53.2295",
         "appid": api_key,
-        "lon": "0.5427"
+        "lon": "0.5427",
+        "units":"metric"
     }
     
     # Make the API request
