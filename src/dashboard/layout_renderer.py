@@ -38,16 +38,28 @@ class layout_renderer:
 
         self.matrix.render()
 
-    def renderClock(self):
+    def render_clock(self):
         self.matrix.clear()
         self.matrix.draw_text(
-            (2,8),
+            (8,8),
             strftime("%I:%M:%S"),
-            ImageFont.truetype("DejaVuSansMono.ttf", 20),
+            ImageFont.truetype("DejaVuSansMono.ttf", 10),
             fill = (225,225,225),
             backgroundColor = (0,0,0)
         )
         self.matrix.render()
+
+    def render_temp(self):
+        self.matrix.clear()
+        self.matrix.draw_text(
+            (8,8),
+            "5 degrees",
+            ImageFont.truetype("DejaVuSansMono.ttf", 10),
+            fill = (225,225,225),
+            backgroundColor = (0,0,0)
+        )
+        self.matrix.render()
+
 
     ##ToDo:
     ## Use DrawTextLayout and create layouts to draw multiple lines of text

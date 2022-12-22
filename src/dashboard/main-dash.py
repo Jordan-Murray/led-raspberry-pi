@@ -34,7 +34,11 @@ def run():
     temp_update_interval = 5 * 60
     renderer = layout_renderer(matrix)
     while True:
-        renderer.renderClock()
+        renderer.render_clock()
+
+        time.sleep(30)
+
+        renderer.renderTemp()
         # # Clear the matrix
         # matrix.clear()
 
