@@ -30,7 +30,7 @@ class layout_renderer:
             self.matrix.clear()
             self.matrix.draw_text(
                 (8,8),
-                temp + "°C",
+                str(temp) + "°C",
                 ImageFont.truetype("DejaVuSansMono.ttf", 10),
                 fill = (225,225,225),
                 backgroundColor = (0,0,0)
