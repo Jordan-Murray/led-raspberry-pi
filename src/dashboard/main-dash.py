@@ -5,6 +5,7 @@ from utils import args, led_matrix_options
 from brightness_control import control_brightness
 from temp_display import display_temp
 from PIL import ImageFont
+from layout_renderer import layout_renderer
 
 
 def run():
@@ -31,21 +32,22 @@ def run():
 
     # Set the temperature update interval to 5 minutes (in seconds)
     temp_update_interval = 5 * 60
-
+    renderer = layout_renderer(matrix)
     while True:
-        # Clear the matrix
-        matrix.clear()
+        renderer.renderClock()
+        # # Clear the matrix
+        # matrix.clear()
 
-        # Draw the time on the matrix
-        matrix.draw_text((0,0), time.strftime("%I:%M:%S"), ImageFont.truetype("DejaVuSansMono.ttf", 10), fill=(255,255,255), backgroundColor = (0,0,0))
+        # # Draw the time on the matrix
+        # matrix.draw_text((0,0), time.strftime("%I:%M:%S"), ImageFont.truetype("DejaVuSansMono.ttf", 10), fill=(255,255,255), backgroundColor = (0,0,0))
 
-        # # Call the control_brightness function to adjust the brightness if necessary
-        # control_brightness(matrix)
+        # # # Call the control_brightness function to adjust the brightness if necessary
+        # # control_brightness(matrix)
 
-        matrix.render()
+        # matrix.render()
         
-        # Call the display_temp function to display the current temperature on the matrix
-        display_temp(matrix, temp_update_interval)
+        # # Call the display_temp function to display the current temperature on the matrix
+        # display_temp(matrix, temp_update_interval)
 
             
 
