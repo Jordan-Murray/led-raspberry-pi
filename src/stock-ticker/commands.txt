@@ -1,8 +1,6 @@
 ssh pi@192.168.0.14
 password: raspberry
 
-sudo python3 main.py --led-cols=64 --led-rows=32 --led-gpio-mapping=adafruit-hat --led-brightness=60
-
 sudo shutdown -h now
 
 #start screen
@@ -13,10 +11,8 @@ ctrl a then d
 #open existing screen session
 screen -r
 
-
-
 cd led-raspberry-pi/src/dashboard/
-sudo python3 main-dash.py --led-gpio-mapping=adafruit-hat
+sudo python3 main.py --led-gpio-mapping=adafruit-hat
 
 
 # # Clear the matrix
