@@ -13,8 +13,7 @@ def run():
 
     # Initialize the matrix
     matrix = Matrix(RGBMatrix(options = matrixOptions))
-    # Set brightness to 50%
-    matrix.set_brightness(100)
+    matrix.set_brightness(75)
 
     renderer = LayoutRenderer(matrix)
     while True:
