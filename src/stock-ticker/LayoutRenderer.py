@@ -8,10 +8,11 @@ class LayoutRenderer:
     def __init__(self,matrix):
         self.matrix = matrix
         self.font = ImageFont.truetype("DejaVuSansMono.ttf", 10)
-        self.btcPrice = str(getprice('bitcoin','usd')) 
-        #ImageFont.truetype("04b.ttf", 8)
 
     def renderBTCPrice(self):
+        # Fetch latest BTC price
+        btcPrice = str(getprice('bitcoin','usd'))
+        
         self.matrix.clear()
         self.matrix.draw_text(
             (1,1),
@@ -23,7 +24,7 @@ class LayoutRenderer:
 
         self.matrix.draw_text(
             (1,12),
-            "$" + self.btcPrice,
+            "$" + btcPrice,
             self.font,
             fill = (225,225,225),
             backgroundColor = (0,0,0)
