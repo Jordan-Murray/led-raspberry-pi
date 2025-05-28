@@ -34,7 +34,7 @@ class LayoutRenderer:
             self.matrix.draw_text(
                 (1,12),
                 "$" + self.btc_price,
-                ImageFont.truetype("DejaVuSansMono.ttf", 14),
+                ImageFont.truetype("DejaVuSansMono.ttf", 13),
                 fill = (225,225,225),
                 backgroundColor = (0,0,0)
             )
@@ -44,7 +44,7 @@ class LayoutRenderer:
                 change_text = f"{self.btc_change_24h:+.2f}%"
                 color = (0, 255, 0) if self.btc_change_24h >= 0 else (255, 0, 0)
                 self.matrix.draw_text(
-                    (1, 23),
+                    (1, 24),
                     change_text,
                     self.font,
                     fill = color,
