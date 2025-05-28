@@ -17,9 +17,11 @@ def retry_session(retries, session=None, backoff_factor=0.3):
     return session
 
 def getprice(coinId,fiatId):
-
-    endpoint = "https://api.coingecko.com/api/v3/simple/price?ids="+ coinId + "&vs_currencies=" + fiatId
+    endpoint = "https://api.coingecko.com/api/v3/simple/price?ids="+ coinId + "&vs_currencies=" + fiatId + "&include_24hr_change=true"
     session = retry_session(retries=1)
     response = session.get(url=endpoint)
     json_obj = response.json()
-    return json_obj[coinId][fiatId]
+    return {
+        'price': json_obj[coinId][fiatId],
+        'change_24h': json_obj[coinId][fiatId + '_24h_change']
+    }
