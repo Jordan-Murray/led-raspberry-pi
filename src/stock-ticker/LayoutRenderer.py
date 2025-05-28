@@ -17,6 +17,7 @@ class LayoutRenderer:
         self.last_price_update = strftime("%M")
 
     def renderBTCPrice(self):
+        current_time = strftime("%I:%M:%S")
         self.matrix.clear()
         self.matrix.draw_text(
             (1,1),
@@ -37,7 +38,7 @@ class LayoutRenderer:
 
         self.matrix.draw_text(
             (1,23),
-            strftime("%I:%M:%S"),
+            current_time,
             self.font,
             fill = (225,225,225),
             backgroundColor = (0,0,0)
