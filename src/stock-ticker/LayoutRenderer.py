@@ -29,20 +29,20 @@ class LayoutRenderer:
 
         if self.btc_price:
             self.matrix.draw_text(
-                (1,12),
+                (2,12),
                 "$" + self.btc_price,
-                self.font,
+                ImageFont.truetype("DejaVuSansMono.ttf", 16),
                 fill = (225,225,225),
                 backgroundColor = (0,0,0)
             )
 
-        self.matrix.draw_text(
-            (1,23),
-            current_time,
-            self.font,
-            fill = (225,225,225),
-            backgroundColor = (0,0,0)
-        )
+        # self.matrix.draw_text(
+        #     (1,23),
+        #     current_time,
+        #     self.font,
+        #     fill = (225,225,225),
+        #     backgroundColor = (0,0,0)
+        # )
 
         self.matrix.render()
 
