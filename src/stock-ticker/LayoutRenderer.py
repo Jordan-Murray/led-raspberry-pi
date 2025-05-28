@@ -31,7 +31,7 @@ class LayoutRenderer:
             self.matrix.draw_text(
                 (2,12),
                 "$" + self.btc_price,
-                ImageFont.truetype("DejaVuSansMono.ttf", 16),
+                ImageFont.truetype("DejaVuSansMono.ttf", 14),
                 fill = (225,225,225),
                 backgroundColor = (0,0,0)
             )
