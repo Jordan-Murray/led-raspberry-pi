@@ -11,8 +11,13 @@ ctrl a then d
 #open existing screen session
 screen -r
 
-cd led-raspberry-pi/src/dashboard/
+cd led-raspberry-pi/src/stock-ticker
 sudo python3 main.py --led-gpio-mapping=adafruit-hat
+
+#delete all screen sessions
+screen -ls | awk '/\t[0-9]+/{print $1}' | xargs -r -I {} screen -S {} -X quit
+
+
 
 
 # # Clear the matrix
